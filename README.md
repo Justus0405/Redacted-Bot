@@ -1,3 +1,5 @@
+<img width="4000" height="1500" alt="Redacted_Banner_Github" src="https://github.com/user-attachments/assets/250b42f6-d655-4947-932f-00a917e8fbc3" />
+
 <p align="center">
     <!-- Discord Badge -->
     <a href="https://discord.justus0405.com/"><img src="https://img.shields.io/discord/1370519315400495234?logo=Discord&colorA=1e1e2e&colorB=a6e3a1&style=for-the-badge"></a>
@@ -9,9 +11,15 @@
     <a href="https://github.com/Justus0405/Redacted-Bot/commits/main/"><img src="https://img.shields.io/github/last-commit/Justus0405/Redacted-Bot?logo=github&colorA=1e1e2e&colorB=cdd6f4&style=for-the-badge"></a>
 </p>
 
+<img width="4000" height="1500" alt="Redacted_Banner_Github_Installation" src="https://github.com/user-attachments/assets/b708530b-bc08-4380-941b-edc1f404ec07" />
+
 #
 
-## About
+Add the Official Bot to your Server using [this link!](https://discord.com/oauth2/authorize?client_id=1422527616081989633)
+
+<img width="4000" height="1500" alt="Redacted_Banner_Github_About" src="https://github.com/user-attachments/assets/3c7a46e4-59ab-444e-9e2b-bdafcfffa0fa" />
+
+#
 
 Redacted-Bot is a Discord.js bot that helps keep your server safe and friendly.
 Once added to your server, you can run `/setup LOGCHANNEL` to start. The bot will analyze every message with an algorithm that gives a toxicity score from 0 to 100.
@@ -26,9 +34,9 @@ Simple to use, fully customizable, and built to make moderation easier.
 > For now, the bot ignores all users with roles higher than its own and deletes messages with a toxicity score of 90 or above.
 > This behavior will be configurable in future updates.
 
-#
+<img width="4000" height="1500" alt="Redacted_Banner_Github_TODO" src="https://github.com/user-attachments/assets/4c19791f-47e8-4b07-ba61-8251874eb74f" />
 
-## TODO
+#
 
 - [x] Code refactor v1
 - [x] Help command
@@ -42,9 +50,9 @@ Simple to use, fully customizable, and built to make moderation easier.
 - [ ] Seperate Agent API
 - [ ] Code refactor v2
 
-#
+<img width="4000" height="1500" alt="Redacted_Banner_Github_Commands" src="https://github.com/user-attachments/assets/2be9c945-4b99-4c7b-b7eb-309be2ce9557" />
 
-## Commands
+#
 
 Moderator Commands:
 
@@ -74,13 +82,9 @@ Moderator Commands:
 12. `/punishment` `mute` - Mute user
 13. `/punishment` `both` - Delete message and mute user
 
+<img width="4000" height="1500" alt="Redacted_Banner_Github_Self-Hosting" src="https://github.com/user-attachments/assets/10c2d5d4-f40e-40ca-8613-f195ddf3f6fa" />
+
 #
-
-## Installation (Official)
-
-Add the Official Bot to your Server using [this link!](https://discord.com/oauth2/authorize?client_id=1422527616081989633)
-
-## Installation (Self-hosted)
 
 1. Clone the repository:
 
@@ -107,8 +111,6 @@ docker-compose up -d --build
 ```
 
 #
-
-## Run Dependencies (Self-hosted)
 
 ```plaintext
 docker
