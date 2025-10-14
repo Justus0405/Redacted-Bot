@@ -3,6 +3,7 @@ const sendModerationDone = require('../libs/sendModerationDone');
 const checkHierarchy = require('../libs/checkHierarchy');
 const checkToxicity = require('../libs/checkToxicity')
 const manageState = require('../libs/manageState');
+const sendDebugMessage = require('../libs/sendDebugMessage');
 
 module.exports = (client) => {
     // Do something when a new message is written.
@@ -40,6 +41,10 @@ module.exports = (client) => {
 
             // check the toxic score of the cleaned message.
             const toxicScore = await checkToxicity(cleanedContent);
+
+            // Debug logging.
+            // TODO: maybe remove this in the future because spyware.
+            sendDebugMessage(`${message.author.globalName} [${toxicScore}]: ${message.content}`)
 
             // If toxic score is more than 70 but less than 90.
             if (toxicScore >= 70 && toxicScore < 90) {
