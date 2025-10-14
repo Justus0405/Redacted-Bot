@@ -1,3 +1,4 @@
+const sendModerationWarning = require('../libs/sendModerationWarning');
 const sendModerationDone = require('../libs/sendModerationDone');
 const checkHierarchy = require('../libs/checkHierarchy');
 const checkToxicity = require('../libs/checkToxicity')
