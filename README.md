@@ -12,15 +12,14 @@
     <a href="https://github.com/Justus0405/Redacted-Bot/commits/main/"><img src="https://img.shields.io/github/last-commit/Justus0405/Redacted-Bot?logo=github&colorA=1e1e2e&colorB=cdd6f4&style=for-the-badge"></a>
 </p>
 
-<img width="2000" height="500" alt="Banner_Installation" src="https://github.com/user-attachments/assets/874c1e41-5765-4545-b39b-7abdb693ba8f" />
-
-#
+# Installation (Official)
 
 Add the Official Bot to your Server using [this link!](https://discord.com/oauth2/authorize?client_id=1422527616081989633)
 
+#
+
 <img width="2000" height="500" alt="Banner_About" src="https://github.com/user-attachments/assets/66af1f4f-0a9c-4897-a554-958d9f84fda1" />
 
-#
 
 Redacted-Bot is a Discord.js bot that helps keep your server safe and friendly.
 Once added to your server, you can run `/setup LOGCHANNEL` to start. The bot will analyze every message with an algorithm that gives a toxicity score from 0 to 100.
@@ -35,9 +34,9 @@ Simple to use, fully customizable, and built to make moderation easier.
 > For now, the bot ignores all users with roles higher than its own and deletes messages with a toxicity score of 90 or above.
 > This behavior will be configurable in future updates.
 
-<img width="2000" height="500" alt="Banner_TODO" src="https://github.com/user-attachments/assets/01a74a21-402d-435f-ab2f-7fe15dc23173" />
-
 #
+
+<img width="2000" height="500" alt="Banner_TODO" src="https://github.com/user-attachments/assets/01a74a21-402d-435f-ab2f-7fe15dc23173" />
 
 - [x] Code refactor v1
 - [x] Help command
@@ -51,9 +50,9 @@ Simple to use, fully customizable, and built to make moderation easier.
 - [ ] Seperate Agent API
 - [ ] Code refactor v2
 
-<img width="2000" height="500" alt="Banner_Commands" src="https://github.com/user-attachments/assets/4de30540-f07b-44b3-ab53-c7245ab2ac1e" />
-
 #
+
+<img width="2000" height="500" alt="Banner_Commands" src="https://github.com/user-attachments/assets/4de30540-f07b-44b3-ab53-c7245ab2ac1e" />
 
 Moderator Commands:
 
@@ -83,9 +82,9 @@ Moderator Commands:
 12. `/punishment` `mute` - Mute user
 13. `/punishment` `both` - Delete message and mute user
 
-<img width="2000" height="500" alt="Banner_Self-Hosting" src="https://github.com/user-attachments/assets/b4fcaebe-41ea-46aa-8b9f-0f7213999fe8" />
-
 #
+
+<img width="2000" height="500" alt="Banner_Self-Hosting" src="https://github.com/user-attachments/assets/b4fcaebe-41ea-46aa-8b9f-0f7213999fe8" />
 
 1. Clone the repository:
 
