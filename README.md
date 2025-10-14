@@ -1,4 +1,5 @@
-<img width="4000" height="1500" alt="Redacted_Banner_Github" src="https://github.com/user-attachments/assets/250b42f6-d655-4947-932f-00a917e8fbc3" />
+
+<img width="2000" height="500" alt="Banner" src="https://github.com/user-attachments/assets/7088f6ef-c2ce-405e-8507-c0a6159b9f26" />
 
 <p align="center">
     <!-- Discord Badge -->
@@ -11,13 +12,13 @@
     <a href="https://github.com/Justus0405/Redacted-Bot/commits/main/"><img src="https://img.shields.io/github/last-commit/Justus0405/Redacted-Bot?logo=github&colorA=1e1e2e&colorB=cdd6f4&style=for-the-badge"></a>
 </p>
 
-<img width="4000" height="1500" alt="Redacted_Banner_Github_Installation" src="https://github.com/user-attachments/assets/b708530b-bc08-4380-941b-edc1f404ec07" />
+<img width="2000" height="500" alt="Banner_Installation" src="https://github.com/user-attachments/assets/874c1e41-5765-4545-b39b-7abdb693ba8f" />
 
 #
 
 Add the Official Bot to your Server using [this link!](https://discord.com/oauth2/authorize?client_id=1422527616081989633)
 
-<img width="4000" height="1500" alt="Redacted_Banner_Github_About" src="https://github.com/user-attachments/assets/3c7a46e4-59ab-444e-9e2b-bdafcfffa0fa" />
+<img width="2000" height="500" alt="Banner_About" src="https://github.com/user-attachments/assets/66af1f4f-0a9c-4897-a554-958d9f84fda1" />
 
 #
 
@@ -34,7 +35,7 @@ Simple to use, fully customizable, and built to make moderation easier.
 > For now, the bot ignores all users with roles higher than its own and deletes messages with a toxicity score of 90 or above.
 > This behavior will be configurable in future updates.
 
-<img width="4000" height="1500" alt="Redacted_Banner_Github_TODO" src="https://github.com/user-attachments/assets/4c19791f-47e8-4b07-ba61-8251874eb74f" />
+<img width="2000" height="500" alt="Banner_TODO" src="https://github.com/user-attachments/assets/01a74a21-402d-435f-ab2f-7fe15dc23173" />
 
 #
 
@@ -50,7 +51,7 @@ Simple to use, fully customizable, and built to make moderation easier.
 - [ ] Seperate Agent API
 - [ ] Code refactor v2
 
-<img width="4000" height="1500" alt="Redacted_Banner_Github_Commands" src="https://github.com/user-attachments/assets/2be9c945-4b99-4c7b-b7eb-309be2ce9557" />
+<img width="2000" height="500" alt="Banner_Commands" src="https://github.com/user-attachments/assets/4de30540-f07b-44b3-ab53-c7245ab2ac1e" />
 
 #
 
@@ -82,7 +83,7 @@ Moderator Commands:
 12. `/punishment` `mute` - Mute user
 13. `/punishment` `both` - Delete message and mute user
 
-<img width="4000" height="1500" alt="Redacted_Banner_Github_Self-Hosting" src="https://github.com/user-attachments/assets/10c2d5d4-f40e-40ca-8613-f195ddf3f6fa" />
+<img width="2000" height="500" alt="Banner_Self-Hosting" src="https://github.com/user-attachments/assets/b4fcaebe-41ea-46aa-8b9f-0f7213999fe8" />
 
 #
 
