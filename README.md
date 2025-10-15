@@ -16,7 +16,7 @@
 <p align="center">
 Add the Official Bot to your Server
 <a href="https://discord.com/oauth2/authorize?client_id=1422527616081989633">using this link!</a>
-</p>
+</p><br><br><br><br><br><br><br><br><br><br>
 
 <img width="2000" height="500" alt="Banner_About" src="https://github.com/user-attachments/assets/66af1f4f-0a9c-4897-a554-958d9f84fda1" />
 
