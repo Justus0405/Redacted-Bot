@@ -1,9 +1,10 @@
 const sendModerationWarning = require('../libs/sendModerationWarning');
 const sendModerationDone = require('../libs/sendModerationDone');
-const checkHierarchy = require('../libs/checkHierarchy');
-const checkToxicity = require('../libs/checkToxicity')
-const manageState = require('../libs/manageState');
 const sendDebugMessage = require('../libs/sendDebugMessage');
+const checkHierarchy = require('../libs/checkHierarchy');
+const sanitizeInput = require('../libs/sanitizeInput');
+const checkToxicity = require('../libs/checkToxicity');
+const manageState = require('../libs/manageState');
 
 module.exports = (client) => {
     // Do something when a new message is written.
@@ -24,23 +25,23 @@ module.exports = (client) => {
         const ok = await checkHierarchy(message.member, message.guild.members.me, 'ManageMessages');
         if (!ok) return;
 
+        // Make the message all lowercase and sanitize Cyrillic and Greek characters.
+        const sanitizedMessage = await sanitizeInput(message.content.toLowerCase());
+
         // Ignore messages containing whitelisted words.
         // TODO: Switch to database approach.
-        const whitelist = ['sucks', 'dare', 'cheater', 'wtf', 'fool', 'dumb', 'damn', 'shut', 'stupid', 'idiot', 'hell', 'fire', 'suck', 'fuck', 'fucking', 'shit', 'shitty', 'dumbass', 'hate', 'pussy', 'ass', 'gay', 'lesbian', 'homosexual', 'men', 'women'];
-
-        // Make the message to all lowercase.
-        const content = message.content.toLowerCase();
+        const whitelist = ['sucks', 'dare', 'cheater', 'wtf', 'fool', 'dumb', 'damn', 'damnit', 'shut', 'stupid', 'idiot', 'hell', 'fire', 'suck', 'fuck', 'fucking', 'shit', 'shitty', 'dumbass', 'hate', 'pussy', 'ass', 'gay', 'lesbian', 'homosexual', 'men', 'women'];
 
         // Regex that matches any whitelisted word.
         const regex = new RegExp(`\\b(${whitelist.join('|')})\\b`, 'gi');
 
         // Remove the whitelisted words from the message.
-        const cleanedContent = content.replace(regex, '').replace(/\s+/g, ' ').trim();
+        const whitelistedContent = sanitizedMessage.replace(regex, '').replace(/\s+/g, ' ').trim();
 
         try {
 
             // check the toxic score of the cleaned message.
-            const toxicScore = await checkToxicity(cleanedContent);
+            const toxicScore = await checkToxicity(whitelistedContent);
 
             // Debug logging.
             // TODO: maybe remove this in the future because spyware.
