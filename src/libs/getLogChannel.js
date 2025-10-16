@@ -10,7 +10,7 @@ async function getLogChannel(guild) {
 
     // If no entry is found return null which ignores the message.
     if (!row || !row.log_channel_id) {
-        await sendDebugMessage(`No log channel ID found for guild ${guild.id}`);
+        sendDebugMessage(`No log channel ID found for guild ${guild.id}`);
         return null;
     }
 
@@ -19,7 +19,7 @@ async function getLogChannel(guild) {
         // to the log channel, it is fetched here.
         const channel = await guild.channels.fetch(row.log_channel_id);
         if (!channel) {
-            await sendDebugMessage(`Could not fetch log channel with ID ${row.log_channel_id}`);
+            sendDebugMessage(`Could not fetch log channel with ID ${row.log_channel_id}`);
             return null;
         }
         return channel;
