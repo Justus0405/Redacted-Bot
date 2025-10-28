@@ -5,7 +5,10 @@ async function getLogChannel(guild) {
 
     // Get log_channel_id as string.
     const row = manageSQLite
-        .prepare("SELECT log_channel_id FROM servers WHERE guild_id = ?")
+        .prepare(`
+            SELECT log_channel_id
+            FROM servers
+            WHERE guild_id = ?`)
         .get(guild.id);
 
     // If no entry is found return null which ignores the message.

@@ -5,6 +5,7 @@ const checkHierarchy = require('../libs/checkHierarchy');
 const sanitizeInput = require('../libs/sanitizeInput');
 const checkToxicity = require('../libs/checkToxicity');
 const manageState = require('../libs/manageState');
+const getGuildSettings = require('../libs/getGuildSettings');
 
 module.exports = (client) => {
     // Do something when a new message is written.
@@ -21,9 +22,13 @@ module.exports = (client) => {
         // Ignore bot messages.
         if (message.author.bot) return;
 
-        // Check hierarchy and permissions.
-        const ok = await checkHierarchy(message.member, message.guild.members.me, 'ManageMessages');
-        if (!ok) return;
+        // Check hierarchy and permissions when enabled.
+        const optionHierarchy = await getGuildSettings(message.guild);
+
+        if (optionHierarchy.hierarchy === true) {
+            const ok = await checkHierarchy(message.member, message.guild.members.me, 'ManageMessages');
+            if (!ok) return;
+        }
 
         // Make the message all lowercase and sanitize Cyrillic and Greek characters.
         const sanitizedMessage = await sanitizeInput(message.content.toLowerCase());
