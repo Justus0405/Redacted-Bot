@@ -1,6 +1,5 @@
 const sendSuccessMessage = require('../../libs/sendSuccessMessage');
 const manageSQLite = require('../../libs/manageSQLite');
-const sendErrorMessage = require('../../libs/sendErrorMessage');
 
 async function hierarchy(interaction) {
 
