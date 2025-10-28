@@ -14,7 +14,7 @@ async function hierarchy(interaction) {
                 WHERE guild_id = ?`
     ).run(JSON.stringify(dbOption), interaction.guild.id);
 
-    sendSuccessMessage(interaction, `Successfully changed hierarchy to \`\`\`${option}\`\`\``);
+    sendSuccessMessage(interaction, `Successfully changed hierarchy to \`${option}\``);
 }
 
 module.exports = hierarchy;
