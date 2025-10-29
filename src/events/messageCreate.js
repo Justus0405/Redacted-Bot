@@ -23,11 +23,14 @@ module.exports = (client) => {
         if (message.author.bot) return;
 
         // Check hierarchy and permissions when enabled.
-        const option = await getGuildSetting(message.guild, "setting_hierarchy");
+        // TODO:
+        // optionHierarchy.setting_hierarchy seriously?
+        // I need to come up with a better naming convention...
+        const optionHierarchy = await getGuildSetting(message.guild, "setting_hierarchy");
 
-        sendDebugMessage(`Setting Hierarchy: ${option.setting_hierarchy}`)
+        sendDebugMessage(`Setting Hierarchy: ${optionHierarchy.setting_hierarchy}`)
 
-        if (option.setting_hierarchy != 0) {
+        if (optionHierarchy.setting_hierarchy != 0) {
             const ok = await checkHierarchy(message.member, message.guild.members.me, 'ManageMessages');
             if (!ok) return;
         }
@@ -57,7 +60,15 @@ module.exports = (client) => {
             // If toxic score is more than 70 but less than 90.
             if (toxicScore >= 70 && toxicScore < 90) {
 
-                await sendModerationWarning(message, toxicScore);
+                // Send warning if enabled for the server.
+                const optionWarnings = await getGuildSetting(message.guild, "setting_warnings");
+
+                sendDebugMessage(`Setting Warnings: ${optionWarnings.setting_warnings}`)
+
+                if (optionWarnings.setting_warnings != 0) {
+                    await sendModerationWarning(message, toxicScore);
+                }
+
             }
 
             // If toxic score is more or equal to 90.

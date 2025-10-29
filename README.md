@@ -44,8 +44,8 @@ Simple to use, fully customizable, and built to make moderation easier.
 - [x] Setup command
 - [ ] Statistics command
 - [ ] Whitelist commands
-- [ ] Hierarchy commands
-- [ ] Warning commands
+- [x] Hierarchy commands
+- [x] Warning commands
 - [ ] Punishment commands
 - [ ] SQLite Database code for settings
 - [ ] Seperate Agent API
