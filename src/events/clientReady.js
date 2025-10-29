@@ -1,4 +1,4 @@
-const { ActivityType } = require("discord.js");
+const { ActivityType } = require('discord.js');
 const sendDebugMessage = require('../libs/sendDebugMessage');
 
 // TODO: Remove this in favour of the database.

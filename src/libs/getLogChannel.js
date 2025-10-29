@@ -1,5 +1,5 @@
 const sendDebugMessage = require('./sendDebugMessage');
-const manageSQLite = require("../libs/manageSQLite");
+const manageSQLite = require('../libs/manageSQLite');
 
 async function getLogChannel(guild) {
 

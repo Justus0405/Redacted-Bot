@@ -1,6 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 const sendDebugMessage = require('./sendDebugMessage');
-const getLogChannel = require("./getLogChannel");
+const getLogChannel = require('./getLogChannel');
+const getGuildSetting = require('./getGuildSetting')
 
 async function sendModerationDone(message, toxicScore) {
 

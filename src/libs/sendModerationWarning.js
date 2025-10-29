@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require('discord.js');
-const sendDebugMessage = require("./sendDebugMessage");
-const getLogChannel = require("./getLogChannel");
+const sendDebugMessage = require('./sendDebugMessage');
+const getLogChannel = require('./getLogChannel');
 
 async function sendModerationWarning(message, toxicScore) {
 
