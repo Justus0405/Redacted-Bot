@@ -46,7 +46,7 @@ Simple to use, fully customizable, and built to make moderation easier.
 - [ ] Whitelist commands
 - [x] Hierarchy commands
 - [x] Warning commands
-- [ ] Punishment commands
+- [x] Punishment commands
 - [ ] SQLite Database code for settings
 - [ ] Seperate Agent API
 - [ ] Code refactor v2
