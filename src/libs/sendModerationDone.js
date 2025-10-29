@@ -35,10 +35,15 @@ async function sendModerationDone(message, toxicScore) {
         // Get the current punishment setting.
         const optionPunishment = await getGuildSetting(message.guild, "setting_punishment");
 
-        sendDebugMessage(`Setting Punishment: ${optionPunishment.setting_punishment}`)
+        // Switch case doesnt recognize floats by default?
+        sendDebugMessage(`Setting Punishment: ${optionPunishment.setting_punishment}`);
+
+        const punishment = Number(optionPunishment.setting_punishment);
+
+        sendDebugMessage(`Setting Punishment Number: ${punishment}`);
 
         // Execute the punishment.
-        switch (optionPunishment.setting_punishment) {
+        switch (punishment) {
             case 1:
                 await message.delete();
                 break;
