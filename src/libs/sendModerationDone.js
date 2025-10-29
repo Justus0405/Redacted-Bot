@@ -31,8 +31,31 @@ async function sendModerationDone(message, toxicScore) {
         // Send log before deleting the message lol.
         await logChannel.send({ embeds: [embed] });
 
-        // Delete the message.
-        await message.delete();
+        // Get the current punishment setting.
+        const optionPunishment = await getGuildSetting(message.guild, "setting_punishment");
+
+        sendDebugMessage(`Setting Punishment: ${optionPunishment.setting_punishment}`)
+
+        // Execute the punishment.
+        switch (optionPunishment.setting_punishment) {
+            case 1:
+                await message.delete();
+                break;
+
+            case 2:
+                // 1 Hour hardcoded timeout, maybe add option for this in the future.
+                await message.author.timeout(1 * 60 * 60 * 1000, "AUTOMUTE: Hatespeech");
+                break;
+
+            case 3:
+                await message.author.timeout(1 * 60 * 60 * 1000, "AUTOMUTE: Hatespeech");
+                await message.delete();
+                break;
+
+            default:
+                break;
+        }
+
     } catch (error) {
         console.log(error)
         return
