@@ -1,22 +1,19 @@
 const sendSuccessMessage = require('../../libs/sendSuccessMessage');
 const manageSQLite = require('../../libs/manageSQLite');
 
-async function hierarchy(interaction) {
+async function warnings(interaction) {
 
     const option = interaction.options.getBoolean('option');
 
-    // Fancy tenary operator shit.
-    // Basically like if/else but in a single line.
-    // if option is true, then the value should be 1, else 0;
     const setting = option ? 1 : 0;
 
     manageSQLite.prepare(`
                 UPDATE settings
-                SET setting_hierarchy = ?
+                SET setting_warnings = ?
                 WHERE guild_id = ?`
     ).run(setting, interaction.guild.id);
 
-    sendSuccessMessage(interaction, `Successfully changed hierarchy to \`${option}\``);
+    sendSuccessMessage(interaction, `Successfully changed warnings to \`${option}\``);
 }
 
-module.exports = hierarchy;
+module.exports = warnings;

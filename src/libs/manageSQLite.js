@@ -13,11 +13,13 @@ try {
     // Create new table in case it doesnt exist.
     // TODO: Convert whitelist array in messageCreate.js to database.
     db.prepare(`
-    CREATE TABLE IF NOT EXISTS servers (
+    CREATE TABLE IF NOT EXISTS settings (
         guild_id TEXT PRIMARY KEY,
         log_channel_id TEXT NOT NULL,
-        whitelist TEXT DEFAULT ['fuck'],
-        settings TEXT DEFAULT []
+        setting_whitelist TEXT DEFAULT [fuck, shit],
+        setting_hierarchy TEXT DEFAULT [1.0],
+        setting_warnings TEXT DEFAULT [1.0],
+        setting_punishment TEXT DEFAULT [1.0]
     )`).run();
 
     module.exports = db;

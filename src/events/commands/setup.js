@@ -7,7 +7,7 @@ async function setup(interaction) {
 
     // Database code
     manageSQLite.prepare(`
-                INSERT INTO servers (guild_id, log_channel_id)
+                INSERT INTO settings (guild_id, log_channel_id)
                 VALUES (?, ?)
                 ON CONFLICT(guild_id) DO UPDATE SET log_channel_id = excluded.log_channel_id`
     ).run(interaction.guild.id, channel.id);

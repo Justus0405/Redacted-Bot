@@ -7,7 +7,7 @@ async function getLogChannel(guild) {
     const row = manageSQLite
         .prepare(`
             SELECT log_channel_id
-            FROM servers
+            FROM settings
             WHERE guild_id = ?`)
         .get(guild.id);
 

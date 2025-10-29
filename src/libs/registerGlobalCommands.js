@@ -77,7 +77,7 @@ const commands = [
         ]
     },
     {
-        name: 'warning',
+        name: 'warnings',
         description: 'Select if the bot should log messages with a toxic rating between 70-90%',
         default_member_permissions: PermissionFlagsBits.ModerateMembers.toString(),
         options: [
