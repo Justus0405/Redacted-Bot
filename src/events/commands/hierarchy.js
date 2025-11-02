@@ -1,5 +1,5 @@
-const sendSuccessMessage = require('../../libs/sendSuccessMessage');
-const manageSQLite = require('../../libs/manageSQLite');
+const sendSuccessMessage = require('../../libs/sends/sendSuccessMessage');
+const manageSQLite = require('../../libs/manages/manageSQLite');
 
 async function hierarchy(interaction) {
 

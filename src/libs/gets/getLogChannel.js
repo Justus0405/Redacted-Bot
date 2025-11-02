@@ -1,5 +1,4 @@
-const sendDebugMessage = require('./sendDebugMessage');
-const manageSQLite = require('../libs/manageSQLite');
+const manageSQLite = require('../manages/manageSQLite');
 
 async function getLogChannel(guild) {
 
@@ -11,18 +10,11 @@ async function getLogChannel(guild) {
             WHERE guild_id = ?`)
         .get(guild.id);
 
-    // If no entry is found return null which ignores the message.
-    if (!row || !row.log_channel_id) {
-        sendDebugMessage(`No log channel ID found for guild ${guild.id}`);
-        return null;
-    }
-
     try {
         // Because the id in the database is just a string and we need the object to send messages
         // to the log channel, it is fetched here.
         const channel = await guild.channels.fetch(row.log_channel_id);
         if (!channel) {
-            sendDebugMessage(`Could not fetch log channel with ID ${row.log_channel_id}`);
             return null;
         }
         return channel;

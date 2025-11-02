@@ -1,6 +1,5 @@
-const sendSuccessMessage = require('../../libs/sendSuccessMessage');
-const sendDebugMessage = require('../../libs/sendDebugMessage');
-const manageSQLite = require('../../libs/manageSQLite');
+const sendSuccessMessage = require('../../libs/sends/sendSuccessMessage');
+const manageSQLite = require('../../libs/manages/manageSQLite');
 
 async function punishment(interaction) {
 
@@ -15,8 +14,6 @@ async function punishment(interaction) {
                 WHERE guild_id = ?`
             ).run(1, interaction.guild.id);
 
-            sendDebugMessage("Changed punishment to: delete");
-
             sendSuccessMessage(interaction, `Successfully changed punishment to \`delete\``);
             break;
 
@@ -28,8 +25,6 @@ async function punishment(interaction) {
                 WHERE guild_id = ?`
             ).run(2, interaction.guild.id);
 
-            sendDebugMessage("Changed punishment to: mute");
-
             sendSuccessMessage(interaction, `Successfully changed punishment to \`mute\``);
             break;
 
@@ -40,8 +35,6 @@ async function punishment(interaction) {
                 SET setting_punishment = ?
                 WHERE guild_id = ?`
             ).run(3, interaction.guild.id);
-
-            sendDebugMessage("Changed punishment to: both");
 
             sendSuccessMessage(interaction, `Successfully changed punishment to \`both\``);
             break;

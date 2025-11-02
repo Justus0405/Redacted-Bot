@@ -1,8 +1,5 @@
 const { ActivityType } = require('discord.js');
-const sendDebugMessage = require('../libs/sendDebugMessage');
-
-// TODO: Remove this in favour of the database.
-const manageState = require('../libs/manageState');
+const manageState = require('../libs/manages/manageState');
 
 // TODO: Make the agent a seperate project and communicate via API.
 const { pipeline } = require('@xenova/transformers');
@@ -37,7 +34,6 @@ module.exports = (client) => {
         // Update Presence every 1 minute.
         // This is needed because otherwise the status randomly gets blank idk.
         const sendPresenceInterval = setInterval(() => {
-            sendDebugMessage('Updating Presence...');
             updatePresence();
         }, 60000);
     });

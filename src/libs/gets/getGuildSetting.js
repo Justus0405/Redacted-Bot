@@ -1,5 +1,4 @@
-const sendDebugMessage = require('./sendDebugMessage');
-const manageSQLite = require('./manageSQLite');
+const manageSQLite = require('../manages/manageSQLite');
 
 async function getGuildSetting(guild, setting) {
 

@@ -42,14 +42,15 @@ Simple to use, fully customizable, and built to make moderation easier.
 - [x] Code refactor v1
 - [x] Help command
 - [x] Setup command
-- [ ] Statistics command
+- [x] Statistics command
 - [ ] Whitelist commands
 - [x] Hierarchy commands
 - [x] Warning commands
 - [x] Punishment commands
 - [ ] SQLite Database code for settings
 - [ ] Seperate Agent API
-- [ ] Code refactor v2
+- [x] Code refactor v2
+- [ ] Production ready refactor
 
 <img width="2000" height="500" alt="Banner_Commands" src="https://github.com/user-attachments/assets/4de30540-f07b-44b3-ab53-c7245ab2ac1e" />
 

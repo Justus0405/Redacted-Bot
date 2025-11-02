@@ -1,11 +1,16 @@
-const sendModerationWarning = require('../libs/sendModerationWarning');
-const sendModerationDone = require('../libs/sendModerationDone');
-const sendDebugMessage = require('../libs/sendDebugMessage');
-const getGuildSetting = require('../libs/getGuildSetting');
-const checkHierarchy = require('../libs/checkHierarchy');
-const sanitizeInput = require('../libs/sanitizeInput');
-const checkToxicity = require('../libs/checkToxicity');
-const manageState = require('../libs/manageState');
+// sends
+const sendModerationWarning = require('../libs/sends/sendModerationWarning');
+const sendModerationDone = require('../libs/sends/sendModerationDone');
+// gets
+const getGuildSetting = require('../libs/gets/getGuildSetting');
+const getGuildSetup = require('../libs/gets/getGuildSetup');
+// checks
+const checkInputSanitization = require('../libs/checks/checkInputSanitization');
+const checkHierarchy = require('../libs/checks/checkHierarchy');
+const checkToxicity = require('../libs/checks/checkToxicity');
+// manages
+const manageStatistics = require('../libs/manages/manageStatistics');
+const manageState = require('../libs/manages/manageState');
 
 module.exports = (client) => {
     // Do something when a new message is written.
@@ -15,12 +20,16 @@ module.exports = (client) => {
         // Skip when the model is not loaded yet.
         // TODO: Change for the agent rewrite.
         if (!manageState.classifier) {
-            console.log('[  ] Classifier not loaded yet!')
+            console.log('[  ] Classifier not loaded yet!');
             return
         }
 
         // Ignore bot messages.
         if (message.author.bot) return;
+
+        // Ignore the message when the server did not complete the setup.
+        const setup = await getGuildSetup(message.guild);
+        if (!setup) return;
 
         // Check hierarchy and permissions when enabled.
         // TODO:
@@ -28,15 +37,13 @@ module.exports = (client) => {
         // I need to come up with a better naming convention...
         const optionHierarchy = await getGuildSetting(message.guild, "setting_hierarchy");
 
-        sendDebugMessage(`Setting Hierarchy: ${optionHierarchy.setting_hierarchy}`)
-
         if (optionHierarchy.setting_hierarchy != 0) {
             const ok = await checkHierarchy(message.member, message.guild.members.me, 'ManageMessages');
             if (!ok) return;
         }
 
         // Make the message all lowercase and sanitize Cyrillic and Greek characters.
-        const sanitizedMessage = await sanitizeInput(message.content.toLowerCase());
+        const sanitizedMessage = await checkInputSanitization(message.content.toLowerCase());
 
         // Ignore messages containing whitelisted words.
         // TODO: Switch to database approach.
@@ -53,17 +60,14 @@ module.exports = (client) => {
             // check the toxic score of the cleaned message.
             const toxicScore = await checkToxicity(whitelistedContent);
 
-            // Debug logging.
-            // TODO: maybe remove this in the future because spyware.
-            sendDebugMessage(`${message.author.globalName} [${toxicScore}]: ${message.content}`)
+            // Add +1 to the messages scanned statistic
+            manageStatistics("messages_scanned");
 
             // If toxic score is more than 70 but less than 90.
             if (toxicScore >= 70 && toxicScore < 90) {
 
                 // Send warning if enabled for the server.
                 const optionWarnings = await getGuildSetting(message.guild, "setting_warnings");
-
-                sendDebugMessage(`Setting Warnings: ${optionWarnings.setting_warnings}`)
 
                 if (optionWarnings.setting_warnings != 0) {
                     await sendModerationWarning(message, toxicScore);

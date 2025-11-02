@@ -1,5 +1,5 @@
-const sendSuccessMessage = require('../../libs/sendSuccessMessage');
-const manageSQLite = require('../../libs/manageSQLite');
+const sendSuccessMessage = require('../../libs/sends/sendSuccessMessage');
+const manageSQLite = require('../../libs/manages/manageSQLite');
 
 async function warnings(interaction) {
 
@@ -10,8 +10,8 @@ async function warnings(interaction) {
     manageSQLite.prepare(`
                 UPDATE settings
                 SET setting_warnings = ?
-                WHERE guild_id = ?`
-    ).run(setting, interaction.guild.id);
+                WHERE guild_id = ?
+    `).run(setting, interaction.guild.id);
 
     sendSuccessMessage(interaction, `Successfully changed warnings to \`${option}\``);
 }

@@ -1,10 +1,10 @@
 // Commands Moderators.
 const helpCommand = require('./commands/help');
 const setupCommand = require('./commands/setup');
+const statisticsCommand = require('./commands/statistics');
 const hierarchyCommand = require('./commands/hierarchy');
 const warningsCommand = require('./commands/warnings');
 const punishmentCommand = require('./commands/punishment');
-
 
 module.exports = (client) => {
 
@@ -20,6 +20,9 @@ module.exports = (client) => {
                 break;
             case 'setup':
                 setupCommand(interaction);
+                break;
+            case 'statistics':
+                statisticsCommand(interaction);
                 break;
             case 'hierarchy':
                 hierarchyCommand(interaction);

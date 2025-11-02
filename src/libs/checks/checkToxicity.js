@@ -1,4 +1,4 @@
-const state = require('../libs/manageState');
+const state = require('../manages/manageState');
 
 async function checkToxicity(text) {
 

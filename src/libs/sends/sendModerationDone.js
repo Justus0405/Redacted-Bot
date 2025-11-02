@@ -1,7 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
-const sendDebugMessage = require('./sendDebugMessage');
-const getLogChannel = require('./getLogChannel');
-const getGuildSetting = require('./getGuildSetting')
+const manageStatistics = require('../manages/manageStatistics');
+const getGuildSetting = require('../gets/getGuildSetting');
+const getLogChannel = require('../gets/getLogChannel');
 
 async function sendModerationDone(message, toxicScore) {
 
@@ -9,7 +9,6 @@ async function sendModerationDone(message, toxicScore) {
 
     // Ignore the message when no log channel is set.
     if (!logChannel) {
-        sendDebugMessage('No log channel available');
         return;
     }
 
@@ -36,25 +35,27 @@ async function sendModerationDone(message, toxicScore) {
         const optionPunishment = await getGuildSetting(message.guild, "setting_punishment");
 
         // Switch case doesnt recognize floats by default?
-        sendDebugMessage(`Setting Punishment: ${optionPunishment.setting_punishment}`);
-
         const punishment = Number(optionPunishment.setting_punishment);
-
-        sendDebugMessage(`Setting Punishment Number: ${punishment}`);
 
         // Execute the punishment.
         switch (punishment) {
             case 1:
+                // Add +1 to the messages deleted statistic
+                manageStatistics("messages_deleted");
+
                 await message.delete();
                 break;
 
             case 2:
                 // 1 Hour hardcoded timeout, maybe add option for this in the future.
-                await message.author.timeout(1 * 60 * 60 * 1000, "AUTOMUTE: Hatespeech");
+                await message.author.timeout(1 * 60 * 60 * 1000, "REDACTED: Hatespeech");
                 break;
 
             case 3:
-                await message.author.timeout(1 * 60 * 60 * 1000, "AUTOMUTE: Hatespeech");
+                // Add +1 to the messages deleted statistic
+                manageStatistics("messages_deleted");
+
+                await message.author.timeout(1 * 60 * 60 * 1000, "REDACTED: Hatespeech");
                 await message.delete();
                 break;
 

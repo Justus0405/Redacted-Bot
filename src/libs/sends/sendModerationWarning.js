@@ -1,6 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const sendDebugMessage = require('./sendDebugMessage');
-const getLogChannel = require('./getLogChannel');
+const getLogChannel = require('../gets/getLogChannel');
 
 async function sendModerationWarning(message, toxicScore) {
 
@@ -8,7 +7,6 @@ async function sendModerationWarning(message, toxicScore) {
 
     // Ignore the message when no log channel is set.
     if (!logChannel) {
-        sendDebugMessage('No log channel available');
         return;
     }
 

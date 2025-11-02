@@ -1,16 +1,12 @@
-const sendErrorMessage = require('./sendErrorMessage');
-const sendDebugMessage = require('./sendDebugMessage');
+const sendErrorMessage = require('../sends/sendErrorMessage');
 
 async function checkHierarchy(targetMember, botMember, permission) {
 
     const targetRolePosition = targetMember?.roles?.highest?.position ?? null;
     const botRolePosition = botMember?.roles?.highest?.position ?? null;
 
-    sendDebugMessage(`Target Role Position: ${targetRolePosition} / Bot Role Position: ${botRolePosition}`);
-
     // Check if target members role is above the bots role.
     if (targetRolePosition >= botRolePosition) {
-        sendDebugMessage('Target Role is above the Bot Role, Skipping...')
         return false;
     }
 
