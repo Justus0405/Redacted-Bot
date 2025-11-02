@@ -4,11 +4,11 @@ const manageUptime = require('../../libs/manages/manageUptime');
 
 async function statistics(interaction) {
 
-    const statistics = await getStatistics()
+    const statistics = await getStatistics();
 
     const bot_uptime = await manageUptime();
 
-    const bot_version = "b623675"
+    const bot_version = "b623675";
 
     const embed = new EmbedBuilder()
         .setTitle('Statistics Overview')

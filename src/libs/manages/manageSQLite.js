@@ -9,6 +9,7 @@ try {
 
     // Create new options table in case it doesnt exist.
     // TODO: Convert whitelist array in messageCreate.js to database.
+    // TODO: Switch setting_* to integers
     db.prepare(`
     CREATE TABLE IF NOT EXISTS settings (
         guild_id TEXT PRIMARY KEY,

@@ -10,10 +10,16 @@ async function sendModerationWarning(message, toxicScore) {
         return;
     }
 
+    // Get the message location.
     const messageUrl = `https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id}`;
+
+    // Get the avatar of the user.
+    const user = message.author;
+    const avatarURL = user.displayAvatarURL({ dynamic: true, size: 1024 });
 
     const embed = new EmbedBuilder()
         .setTitle('⚠️ Potentially Offensive Message')
+        .setThumbnail(avatarURL)
         .setDescription('A message was flagged as potentially offensive.')
         .addFields(
             { name: 'Toxicity Score', value: `\`${toxicScore}\``, inline: true },

@@ -12,8 +12,13 @@ async function sendModerationDone(message, toxicScore) {
         return;
     }
 
+    // Get the avatar of the user.
+    const user = message.author;
+    const avatarURL = user.displayAvatarURL({ dynamic: true, size: 1024 });
+
     const embed = new EmbedBuilder()
         .setTitle('⚠️ Message Removed')
+        .setThumbnail(avatarURL)
         .setDescription('A message was flagged as potentially offensive and has been deleted.')
         .addFields(
             { name: 'Toxicity Score', value: `\`${toxicScore}\``, inline: true },

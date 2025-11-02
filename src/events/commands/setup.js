@@ -12,8 +12,13 @@ async function setup(interaction) {
     `).run(interaction.guild.id, channel.id);
 
     const embed = new EmbedBuilder()
-        .setTitle('</Redacted> Setup')
-        .setDescription('The </Redacted> Discord bot has been successfully configured.\n\nPlease ensure the bot has **write permissions** in your designated logging channel. Once active, the bot will monitor all accessible channels on your server, automatically ignoring whitelisted words and removing any flagged content.\n\nTo adjust these settings or explore additional features, use the `/help` command.')
+        .setTitle('Setup Complete!')
+        .addFields(
+            { name: '', value: 'The bot has been successfully configured.', inline: false },
+            { name: '', value: 'Please ensure the bot has **write permissions** in your designated logging channel.', inline: false },
+            { name: '', value: 'Once active, the bot will monitor all accessible channels on your server, automatically ignoring whitelisted words and removing any flagged content.', inline: false },
+            { name: '', value: 'To adjust these settings or explore additional features, use the `/help` command.', inline: false }
+        )
         .setColor('#ffffff')
         .setTimestamp();
 
