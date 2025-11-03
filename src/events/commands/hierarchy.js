@@ -3,7 +3,7 @@ const manageSQLite = require('../../libs/manages/manageSQLite');
 
 async function hierarchy(interaction) {
 
-    const option = interaction.options.getBoolean('option');
+    const option = interaction.options.getBoolean('enabled');
 
     // Fancy tenary operator shit.
     // Basically like if/else but in a single line.

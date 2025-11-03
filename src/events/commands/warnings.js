@@ -3,7 +3,7 @@ const manageSQLite = require('../../libs/manages/manageSQLite');
 
 async function warnings(interaction) {
 
-    const option = interaction.options.getBoolean('option');
+    const option = interaction.options.getBoolean('enabled');
 
     const setting = option ? 1 : 0;
 

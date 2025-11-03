@@ -41,7 +41,7 @@ const commands = [
                 type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
-                        name: 'value',
+                        name: 'word',
                         description: 'The word',
                         type: ApplicationCommandOptionType.String,
                         required: true
@@ -54,7 +54,7 @@ const commands = [
                 type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
-                        name: 'value',
+                        name: 'word',
                         description: 'The word',
                         type: ApplicationCommandOptionType.String,
                         required: true
@@ -69,7 +69,7 @@ const commands = [
         default_member_permissions: PermissionFlagsBits.ModerateMembers.toString(),
         options: [
             {
-                name: 'option',
+                name: 'enabled',
                 description: 'true or false',
                 type: ApplicationCommandOptionType.Boolean,
                 required: true
@@ -82,7 +82,7 @@ const commands = [
         default_member_permissions: PermissionFlagsBits.ModerateMembers.toString(),
         options: [
             {
-                name: 'option',
+                name: 'enabled',
                 description: 'true or false',
                 type: ApplicationCommandOptionType.Boolean,
                 required: true
