@@ -2,13 +2,13 @@
 
 <p align="center">
     <!-- Discord Badge -->
-    <a href="https://discord.justus0405.com/"><img src="https://img.shields.io/discord/1370519315400495234?logo=Discord&colorA=FFFFFF&colorB=000000&style=for-the-badge"></a>
+    <a href="https://discord.justus0405.com/"><img src="https://img.shields.io/discord/1370519315400495234?logo=Discord&colorA=000000&colorB=FFFFFF&style=for-the-badge"></a>
     <!-- Forks Badge -->
-    <a href="https://github.com/Justus0405/Redacted-Bot/forks"><img src="https://img.shields.io/github/forks/Justus0405/Redacted-Bot?colorA=FFFFFF&colorB=000000&style=for-the-badge"></a>
+    <a href="https://github.com/Justus0405/Redacted-Bot/forks"><img src="https://img.shields.io/github/forks/Justus0405/Redacted-Bot?colorA=000000&colorB=FFFFFF&style=for-the-badge"></a>
     <!-- Stars Badge -->
-    <a href="https://github.com/Justus0405/Redacted-Bot/stargazers"><img src="https://img.shields.io/github/stars/Justus0405/Redacted-Bot?colorA=FFFFFF&colorB=000000&style=for-the-badge"></a>
+    <a href="https://github.com/Justus0405/Redacted-Bot/stargazers"><img src="https://img.shields.io/github/stars/Justus0405/Redacted-Bot?colorA=000000&colorB=FFFFFF&style=for-the-badge"></a>
     <!-- Last Commit Badge -->
-    <a href="https://github.com/Justus0405/Redacted-Bot/commits/main/"><img src="https://img.shields.io/github/last-commit/Justus0405/Redacted-Bot?logo=github&colorA=FFFFFF&colorB=000000&style=for-the-badge"></a>
+    <a href="https://github.com/Justus0405/Redacted-Bot/commits/main/"><img src="https://img.shields.io/github/last-commit/Justus0405/Redacted-Bot?logo=github&colorA=000000&colorB=FFFFFF&style=for-the-badge"></a>
 </p>
 
 <h1 align="center">Installation (Official)</h1>
@@ -99,7 +99,7 @@ docker-buildx
 1. Clone the repository:
 
 ```shell
-git https://github.com/Justus0405/Redacted-Bot.git
+git --depth 1 https://github.com/Justus0405/Redacted-Bot.git
 ```
 
 2. Navigate to the directory:
@@ -114,7 +114,7 @@ cd Redacted-Bot
 nano .env
 ```
 
-4. Build an run with docker:
+4. Build and run with docker:
 
 ```shell
 docker-compose up -d --build
