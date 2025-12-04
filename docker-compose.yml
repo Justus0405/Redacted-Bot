@@ -1,11 +1,10 @@
 services:
   redacted-bot:
+    container_name: "redacted-bot"
+    restart: "unless-stopped"
+    user: "1000:1000"
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: "redacted-bot"
-    restart: "unless-stopped"
-    network_mode: "bridge"
-    user: "1000:1000"
     volumes:
-      - ./data:/usr/src/bot/data
+      - ./data:/home/node/redacted-bot/data

@@ -1,14 +1,14 @@
 FROM node:20
 
-WORKDIR /usr/src/bot
-
-COPY package.json ./
-
-RUN chown -R node:node /usr/src/bot
-
 USER node
 
-RUN npm install
+WORKDIR /home/node/redacted-bot
+
+RUN mkdir -p "/home/node/redacted-bot/data"
+
+COPY --chown=node:node package*.json ./
+
+RUN npm ci --omit=dev
 
 COPY --chown=node:node . .
 

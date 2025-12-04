@@ -11,12 +11,18 @@ pnpm-debug.log
 
 # Ignore Docker’s own files
 Dockerfile
+docker-compose.yml
 .dockerignore
 
 # Ignore other local/dev files
 *.md
 .git
 .gitignore
+.gitattributes
 .coverage
 .coverage.*
 .aws
+.env.example
+make.sh
+debug.sh
+kill.sh
