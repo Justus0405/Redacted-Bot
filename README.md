@@ -99,7 +99,7 @@ docker-buildx
 1. Clone the repository:
 
 ```shell
-git --depth 1 https://github.com/Justus0405/Redacted-Bot.git
+git clone --depth 1 https://github.com/Justus0405/Redacted-Bot.git
 ```
 
 2. Navigate to the directory:
