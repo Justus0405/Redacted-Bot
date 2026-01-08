@@ -47,7 +47,50 @@ module.exports = (client) => {
 
         // Ignore messages containing whitelisted words.
         // TODO: Switch to database approach.
-        const whitelist = ['silly', 'liar', 'crazy', 'assailant', 'criminal', 'freaking', 'crap', 'sucks', 'dare', 'cheater', 'wtf', 'fool', 'dumb', 'damn', 'damnit', 'dammit', 'god', 'allah', 'shut', 'stupid', 'idiot', 'hell', 'fire', 'suck', 'fuck', 'fucking', 'shit', 'shitty', 'dumbass', 'hate', 'pussy', 'ass', 'gay', 'lesbian', 'homosexual', 'men', 'women', 'female', 'male'];
+        const whitelist = [
+            'allah',
+            'ass',
+            'assailant',
+            'cheater',
+            'crap',
+            'crazy',
+            'criminal',
+            'damn',
+            'dammit',
+            'damnit',
+            'dare',
+            'dumb',
+            'dumbass',
+            'dummy',
+            'female',
+            'fire',
+            'fool',
+            'freaking',
+            'fuck',
+            'fucking',
+            'gay',
+            'god',
+            'hate',
+            'hell',
+            'homosexual',
+            'idiot',
+            'kkk',
+            'lazy',
+            'lesbian',
+            'liar',
+            'male',
+            'men',
+            'pussy',
+            'shit',
+            'shitty',
+            'shut',
+            'silly',
+            'suck',
+            'sucks',
+            'stupid',
+            'women',
+            'wtf'
+        ];
 
         // Regex that matches any whitelisted word.
         const regex = new RegExp(`\\b(${whitelist.join('|')})\\b`, 'gi');
