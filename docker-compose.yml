@@ -7,4 +7,5 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
+      - ./.env:/home/node/redacted-bot/.env
       - ./data:/home/node/redacted-bot/data
