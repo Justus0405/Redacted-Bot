@@ -5,9 +5,11 @@ const manageState = require('../libs/manages/manageState');
 const { pipeline } = require('@xenova/transformers');
 
 module.exports = (client) => {
-    // This function runs code once the bot is ready.
 
+    // This function runs code once the bot is ready.
     client.once('clientReady', async () => {
+
+        // Print this message when the bot is loaded.
         console.log(`[  ] ${client.user.tag} is online!`);
 
         // MODEL: https://huggingface.co/models?library=transformers.js&sort=trending&search=toxic
